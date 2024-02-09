@@ -259,7 +259,7 @@ cars_categorical = X.select_dtypes(include=['object'])   #lista kolumn z element
 print("\nKolumny z wartościami typu object")
 print(cars_categorical.head())
 #Konwertowanie zmiennych kategoryczne w zmienne manekinowe
-print("Tworzenie zamiennych kolumn")
+print("\nTworzenie zamiennych kolumn")
 cars_dummies = pd.get_dummies(cars_categorical, drop_first=True, dtype=float) #tworzenie nowych kolumn z wartosciami 0 lub 1
 print(cars_dummies.head())
 print("Usuwanie kolumn z wartosciami katerogytycznymi")
@@ -338,15 +338,17 @@ plt.title('Cena vs Prognoza - model Ridge')
 plt.xlabel('cena', fontsize=10)
 plt.xticks([0, 40000, 80000, 120000, 160000, 200000])
 plt.ylabel('prognozowana cena', fontsize=10)
-plt.ylim(0,160000)
+plt.ylim(0,180000)
 
 indeks = [i for i in range(1, y_pred.size + 1, 1)]  # generating index
 plt.subplot(2, 3, 4)
 plt.plot(indeks, y_test, color="red", linewidth=2, linestyle="-")
 plt.plot(indeks, y_pred, linewidth=2, linestyle="-")
-plt.title('Actual and Predicted', fontsize=8)
-plt.xlabel('Index', fontsize=8)
-plt.ylabel('Car Price', fontsize=8)
+plt.title('Wydruk cen')
+plt.xlabel('indeks', fontsize=10)
+plt.ylabel('cena', fontsize=10)
+plt.legend(["cena","cena_pred"], loc=1, borderpad=0.15)
+plt.ylim(0,200000)
 
 print("\n   W Y N I K I  model LinearRegression")
 #from sklearn.cross_validation import train_test_split
@@ -370,30 +372,32 @@ NRMSE = np.sqrt(mean_squared_error(y_test, y_pred))/wsp
 R2 = r2_score(y_test, y_pred)
 print()
 #ocena modelu
-print('ocena modelu')
+print('ocena modelu', LinearRegression())
 print('NRMSE:',NRMSE, '    R-Squared:',R2)
-#print(linearmodel.score(X_test, y_test))
+
 plt.subplot(2, 3, 2)
 sns.regplot(x = y_test, y = y_pred, color='red')
-plt.scatter(x = y_test,y = y_pred, color='green')
+plt.scatter(y_test, y_pred, color='green')
 plt.title('Cena vs Prognoza - model LinearRegression')
-plt.xlabel('cena', fontsize=8)
-plt.ylabel('prognoza ceny', fontsize=0)
-#plt.subplots_adjust(top=0.92, bottom=0.10, left=0.10, right=0.97)
+plt.xlabel('cena', fontsize=10)
+plt.xticks([0, 40000, 80000, 120000, 160000, 200000])
+plt.ylim(0, 180000)
 
-c = [i for i in range(1, y_pred.size + 1, 1)]  # generating index
+indeks = [i for i in range(1, y_pred.size + 1, 1)]  # generating index
 plt.subplot(2, 3, 5)
-plt.plot(c, y_test, color="red", linewidth=2, linestyle="-")
-plt.plot(c, y_pred, color="green", linewidth=2, linestyle="-")
-plt.title('Actual and Predicted', fontsize=8)
-plt.xlabel('Index', fontsize=8)
-plt.ylabel('cena auta', fontsize=0)
+plt.plot(indeks, y_test, color="red", linewidth=2, linestyle="-")
+plt.plot(indeks, y_pred, color="green", linewidth=2, linestyle="-")
+plt.title('Wydruk cen')
+plt.xlabel('indeks', fontsize=10)
+plt.legend(["cena","cena_pred"], loc=1, borderpad=0.15)
+plt.ylim(0,200000)
 
 print("\n   W Y N I K I  model svm.SVR")
 clf = svm.SVR(kernel="linear")
 clf.fit(X_train, y_train)
 score = clf.score(X_test, y_test) #R-squared
 y_pred = clf.predict(X_test)
+
 df = pd.DataFrame()
 df['cena'] = y_test
 df['cena']= round(df['cena'],2)
@@ -404,39 +408,40 @@ print(df.head(10))
 maxcena = cars['cena'].max()
 mincena = cars['cena'].min()
 wsp = maxcena - mincena
-NRMSE = mean_squared_error(y_test, y_pred)
+NRMSE = mean_squared_error(y_test, y_pred)/wsp
+print()
 #ocena modelu
-print('ocena modelu')
+print('ocena modelu', svm.SVR(kernel='linear'))
 print('NRMSE:',NRMSE, '    R-Squared:',R2)
+
 plt.subplot(2, 3, 3)
 sns.regplot(x = y_test, y = y_pred, color='red')
 plt.scatter(y_test,y_pred, color='blue')
 plt.title('Cena vs Prognoza - model svm.SVR')
-plt.xlabel('cena', fontsize=8)
-plt.ylabel('prognoza ceny', fontsize=0)
-plt.ylim(0, 160000)
-
+plt.xlabel('cena', fontsize=10)
+plt.xticks([0, 40000, 80000, 120000, 160000, 200000])
+plt.ylim(0, 180000)
 
 indeks = [i for i in range(1, y_pred.size + 1, 1)]  # generating index
 plt.subplot(2, 3, 6)
-plt.plot(c, y_test, color="red", linewidth=2, linestyle="-")
-plt.plot(c, y_pred, color="blue", linewidth=2, linestyle="-")
-plt.title('Actual and Predicted', fontsize=10)
-plt.xlabel('Index', fontsize=8)
-plt.ylabel('cena auta', fontsize=0)
-plt.subplots_adjust(top=0.92, bottom=0.10, left=0.07, right=0.99)
-plt.legend()
-plt.savefig('Figura6.jpeg', dpi=400)
+plt.plot(indeks, y_test, color="red", linewidth=2, linestyle="-")
+plt.plot(indeks, y_pred, color="blue", linewidth=2, linestyle="-")
+plt.title('Wydruk cen')
+plt.xlabel('indeks', fontsize=10)
+plt.ylim(0,200000)
+plt.subplots_adjust(top=0.96, bottom=0.06, left=0.07, right=0.99)
+plt.tight_layout(h_pad=0.4)
+plt.legend(["cena","cena_pred"], loc=1, borderpad=0.15)
+plt.savefig('Figura5.jpeg', dpi=400)
 plt.show()
 
-'''
 print('\n******************** PODSUMOWANIE ********************')
 print("Dwa pierwsze modele uzyskały dobre wyniki na danych historycznych")
 print("i mogą posłużyć do prognozowania cen w czasie rzeczystym w oparciu")
-print("o bieżące dane samochodów. W obu przypadkach wynik RMSE jest bliski 0,")
-print("a wynik dopasowania (wspolczynnik dopasowania) jest bliski 1.")
+print("o bieżące dane samochodów. W obu przypadkach wynik NRMSE jest bliski 0,")
+print("a wynik dopasowania (wspolczynnik determinacji) R-Squared jest bliski 1.")
 print("Wynik dopasowania w przypadku trzeciego modelu jest ujemny, co swiadczy")
 print("o zlym dopasowaniu modelu. Porownujac modele najlepszy wynik otrzymal LinearalRegresion.")
-'''
-#dataset = pd.read_csv('Dataset.csv')
 
+print("\nUwaga: zakończenie programu po zamknięciu diagramu!")
+plt.show()
