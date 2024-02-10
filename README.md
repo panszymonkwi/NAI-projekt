@@ -21,7 +21,7 @@ Do prognozowania cen utworzyłem zbiór BazaDanychAut.csv, który otrzymałem
 ze zbioru CarPrice_Assignment.csv samochodów amerykańskich z przed ponad 30 lat po
 wstępnej obróbce (usunięciu kilku kolumn, które uznałem za nieistotne przy
 kupnie samochodu oraz zmian nazw kolumn na język polski).
-Modele regresji, które są trenowane na tym zbiorze to : model Ridge po
+Modele regresji, które są trenowane na tym zbiorze to: model Ridge po
 dobraniu optymalnego parametru przy pomocy GridSearchCV, model LinearRegression
 oraz model svm.SVR. Wytrenowanie modeli na danych historycznych może posłużyć do
 prognozowania cen w czasie rzeczywistym w oparciu o bieżące dane. 
@@ -32,6 +32,7 @@ testowania wyżej wymienionych modeli.
 Python 3.11
 
 ## Biblioteki :
+(również zawarte w pliku requirments.txt)
 * warnings
 * pandas
 * numpy
