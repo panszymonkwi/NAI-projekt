@@ -49,4 +49,18 @@ diagramach i wznawiał działanie po zamknięciu diagramu. Konsola będzie pokaz
 na temat danego diagramu na podstawie pliku csv oraz algorytmów i kodu. Każdy diagram będzie 
 zapisywany w miejscu, z którego został uruchomiony kod.
 
+## Źródła i inspiracje : 
+- materiały z przedmiotów : NAJ, IML, FDL, ICK
+- [sklearn.model_selection.GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
+- [GridSearchCV for Beginners](https://towardsdatascience.com/gridsearchcv-for-beginners-db48a90114ee)
+- [sklearn.linear_model.Ridge](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html)
+- [sklearn.linear_model.LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
+- [Linear Regression in Python](https://realpython.com/linear-regression-in-python/)
+- [sklearn.svm.SVR — scikit-learn 1.4.0 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html)
+- PROSTO O DOPASOWANIU PROSTYCH, CZYLI ANALIZA REGRESJI LINIOWEJ W PRAKTYCE, Janusz Wątroba, StatSoft Polska Sp. z o.o. 
+- [Zarządzanie cenami za pomocą modeli sztucznej inteligencji](https://webwizard.com.pl) › dynamiczne-ustalanie-cen-za-...
+- Teoria sterowania. Grafika w środowisku MATLIB PG M.Grochowski, R.Piotrowski, Ł.Michalczyk 
+- matplotlib.pyplot — Matplotlib 3.5.3 documentation 
+- Kaggle Wyzwanie - Titanic GitHub https://alexiej.github.io › kaggle-titanic
+- Linear-Regression/CarPrice_Assignment.csv 
 
