@@ -27,3 +27,18 @@ oraz model svm.SVR. Wytrenowanie modeli na danych historycznych może posłuży�
 prognozowania cen w czasie rzeczywistym w oparciu o bieżące dane. 
 Projekt zawiera liczne diagramy przedstawiające różne zależności cenowe oraz wyniki
 testowania wyżej wymienionych modeli.
+
+## Język kodu :
+Python 3.11
+
+## Biblioteki :
+* warnings
+* pandas
+* numpy
+* matplotlib
+* seaborn
+* sys
+* sklearn
+* liczne podbiblioteki sklearn
+
+
