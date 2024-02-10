@@ -41,4 +41,11 @@ Python 3.11
 * sklearn
 * liczne podbiblioteki sklearn
 
+## Uruchomienie :
+Po ściągnięciu kodu oraz pliku BazaDanychAut.csv i załadowaniu powyższych bibliotek, wystarczy
+uruchomić kod w środowisku python. Kod będzie zatrzymywał się na kolejnych
+diagramach i wznawiał działanie po zamknięciu diagramu. Konsola będzie pokazywała informacje 
+na temat danego diagramu na podstawie pliku csv oraz algorytmów i kodu. Każdy diagram będzie 
+zapisywany w miejscu, z którego został uruchomiony kod.
+
 
