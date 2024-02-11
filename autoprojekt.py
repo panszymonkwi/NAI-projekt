@@ -262,7 +262,7 @@ print(cars_categorical.head())
 print("\nTworzenie zamiennych kolumn")
 cars_dummies = pd.get_dummies(cars_categorical, drop_first=True, dtype=float) #tworzenie nowych kolumn z wartosciami 0 lub 1
 print(cars_dummies.head())
-print("Usuwanie kolumn z wartosciami katerogytycznymi")
+print("Usuwanie kolumn z wartosciami kategorycznymi")
 X = X.drop(list(cars_categorical.columns), axis=1) #usuwanie kolumn z wartosciami kategorycznymi
 print(X.head())
 print("Dolaczenie nowo utworzonych kolumn")
