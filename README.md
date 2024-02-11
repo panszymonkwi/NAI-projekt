@@ -32,7 +32,7 @@ testowania wyżej wymienionych modeli.
 Python 3.11
 
 ## Biblioteki :
-(również zawarte w pliku requirments.txt)
+(również zawarte w pliku requirements.txt)
 * warnings
 * pandas
 * numpy
@@ -41,6 +41,9 @@ Python 3.11
 * sys
 * sklearn
 * liczne podbiblioteki sklearn
+
+## Dodatkowe pliki :
+BazaDanychAut.csv
 
 ## Uruchomienie :
 Po ściągnięciu kodu oraz pliku BazaDanychAut.csv i załadowaniu powyższych bibliotek, wystarczy
