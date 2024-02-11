@@ -57,10 +57,10 @@ zapisywany w miejscu, z którego został uruchomiony kod.
 - [sklearn.linear_model.LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
 - [Linear Regression in Python](https://realpython.com/linear-regression-in-python/)
 - [sklearn.svm.SVR — scikit-learn 1.4.0 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html)
-- PROSTO O DOPASOWANIU PROSTYCH, CZYLI ANALIZA REGRESJI LINIOWEJ W PRAKTYCE, Janusz Wątroba, StatSoft Polska Sp. z o.o. 
-- [Zarządzanie cenami za pomocą modeli sztucznej inteligencji](https://webwizard.com.pl) › dynamiczne-ustalanie-cen-za-...
+- [PROSTO O DOPASOWANIU PROSTYCH, CZYLI ANALIZA REGRESJI LINIOWEJ W PRAKTYCE, Janusz Wątroba, StatSoft Polska Sp. z o.o.](https://media.statsoft.pl/_old_dnn/downloads/analiza_regresji_liniowej_w_praktyce.pdf) 
+- [Zarządzanie cenami za pomocą modeli sztucznej inteligencji](https://webwizard.com.pl/pl/dynamiczne-ustalanie-cen-za-pomoc%C4%85-algorytm%C3%B3w-sztucznej-inteligencji.html)
 - Teoria sterowania. Grafika w środowisku MATLIB PG M.Grochowski, R.Piotrowski, Ł.Michalczyk 
-- matplotlib.pyplot — Matplotlib 3.5.3 documentation 
-- Kaggle Wyzwanie - Titanic GitHub https://alexiej.github.io › kaggle-titanic
-- Linear-Regression/CarPrice_Assignment.csv 
+- [matplotlib.pyplot — Matplotlib 3.5.3 documentation](https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html) 
+- [Kaggle Wyzwanie - Titanic](https://alexiej.github.io/kaggle-titanic/)
+- Linear-Regression/CarPrice_Assignment.csv (korzystanie z wielu wyników, które pokazał Google)
 
