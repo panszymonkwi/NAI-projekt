@@ -19,7 +19,7 @@ import  sys
 print("      - import sklearn")
 from sklearn import linear_model, svm, preprocessing, metrics
 from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import Normalizer
 from sklearn.linear_model import Ridge, LinearRegression
 from sklearn.svm import SVC, LinearSVC
 from sklearn.metrics import mean_squared_error, r2_score
@@ -274,8 +274,8 @@ print("\nPodział danych na treningowe i testowe oraz skalowanie danych")
 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.7, test_size = 0.3, random_state=100)
 
 #skalowanie danych
-scaler = StandardScaler()
-scale_features = ['liczba drzwi', 'dlugosc', 'szerokosc', 'wysokosc', 'masa', 
+scaler = Normalizer().fit(X)
+scale_features = ['symbol', 'liczba drzwi', 'dlugosc', 'szerokosc', 'wysokosc', 'masa',
        'pojemnosc silnika', 'moc silnika', 'spalanie-miasto', 'spalanie-autostrada']
 
 #print("Kolumny z wartosciami")
@@ -408,7 +408,8 @@ print(df.head(10))
 maxcena = cars['cena'].max()
 mincena = cars['cena'].min()
 wsp = maxcena - mincena
-NRMSE = mean_squared_error(y_test, y_pred)/wsp
+NRMSE = np.sqrt(mean_squared_error(y_test, y_pred))/wsp
+R2 = r2_score(y_test, y_pred)
 print()
 #ocena modelu
 print('ocena modelu', svm.SVR(kernel='linear'))
