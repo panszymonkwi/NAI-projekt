@@ -1,0 +1,20 @@
+Środowisko:
+Python 3.11 (konsola CMD, Pycharm IDE, inne programy obsługujące)
+
+Biblioteki:
+- warnings
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- sys
+- sklearn("from",:"import"):
+	-linear_model, svm, preprocessing, metrics
+	-model_selection: train_test_split, GridSearchCV
+	-preprocessing: Normalizer
+	-linear_model: Ridge, LinearRegression
+	-svm: SVC, LinearSVC
+	-metrics: mean_squared_error, r2_score
+
+Plik:
+BazaDanychAut.csv
